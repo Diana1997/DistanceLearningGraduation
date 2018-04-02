@@ -20,6 +20,16 @@ namespace DistanceLearningGraduation.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Faculty> Faculties { set; get; }
+        public DbSet<Tribune> Tribunes { set; get; }
+        public DbSet<Course> Courses { set; get; }
+        public DbSet<Lesson> Lessons { set; get; }
+        public DbSet<Lecture> Lectures { set; get; }
+        public DbSet<Statement> Statements { set; get; }
+        public DbSet<Exam> Exams { set; get; }
+        public DbSet<Question> Questions { set; get; }
+        public DbSet<Answer> Answers { set; get; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
