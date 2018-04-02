@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<select name="Role">
+	@foreach (var item in ViewBag.RolesList)
+	{
+		<option value="@item.Id"> @item.Name</option>
+	}
+</select>

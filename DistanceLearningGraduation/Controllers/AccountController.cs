@@ -133,12 +133,14 @@ namespace DistanceLearningGraduation.Controllers
                     return View(model);
             }
         }
-
+        private ApplicationDbContext db = new ApplicationDbContext();
         //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(db.Roles.Where(u => !u.Name.Contains("Admin"))
+                                            .ToList(), "Name", "Name");
             return View();
         }
 
