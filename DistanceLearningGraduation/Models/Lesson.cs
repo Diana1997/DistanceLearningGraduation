@@ -11,6 +11,7 @@ namespace DistanceLearningGraduation.Models
         public string Name { get; set; }
         public int CourseID { get; set; }
         public Course Course { get; set; }
+
         public ICollection<Lecture> Lectures { set; get; }
         public ICollection<Exam> Exams { set; get; }
         public ICollection<Question> Questions { set; get; }

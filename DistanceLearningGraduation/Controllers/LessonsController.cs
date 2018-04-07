@@ -17,8 +17,9 @@ namespace DistanceLearningGraduation.Controllers
         // GET: Lessons
         public ActionResult Index()
         {
-            var lessons = db.Lessons.Include(l => l.Course);
-            return View(lessons.ToList());
+            // var lessons = db.Lessons.Include(l => l.Course);
+            //  return View(lessons.ToList());
+            return View();
         }
 
         // GET: Lessons/Details/5
@@ -57,7 +58,7 @@ namespace DistanceLearningGraduation.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Name", lesson.CourseID);
+           // ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Name", lesson.CourseID);
             return View(lesson);
         }
 
@@ -73,7 +74,7 @@ namespace DistanceLearningGraduation.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Name", lesson.CourseID);
+       //     ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Name", lesson.CourseID);
             return View(lesson);
         }
 
@@ -90,7 +91,7 @@ namespace DistanceLearningGraduation.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Name", lesson.CourseID);
+         //   ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Name", lesson.CourseID);
             return View(lesson);
         }
 
