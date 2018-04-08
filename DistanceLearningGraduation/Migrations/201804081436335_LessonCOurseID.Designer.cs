@@ -7,13 +7,13 @@ namespace DistanceLearningGraduation.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class MigrateDB : IMigrationMetadata
+    public sealed partial class LessonCOurseID : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrateDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(LessonCOurseID));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804071733022_MigrateDB"; }
+            get { return "201804081436335_LessonCOurseID"; }
         }
         
         string IMigrationMetadata.Source
