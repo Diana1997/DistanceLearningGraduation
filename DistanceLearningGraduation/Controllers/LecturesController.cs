@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -49,11 +50,21 @@ namespace DistanceLearningGraduation.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LectureID,Name,Path,Links,LessonID,CourseID")] Lecture lecture)
+        public ActionResult Create(Lecture lecture, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
-                db.Lectures.Add(lecture);
+                string path = Path.Combine(Server.MapPath("~/Lectures"), Path.GetFileName(file.FileName));
+                file.SaveAs(path);
+                db.Lectures.Add(new Lecture()
+                {
+                    LectureID = lecture.LectureID,
+                    Name = lecture.Name,
+                    Path = "~/Lectures/" + file.FileName,
+                    LessonID = lecture.LessonID,
+                    Links = lecture.Links,
+                    CourseID = lecture.CourseID,
+                });
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
