@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.ActionLink("Ուղարկել ընդունելիության հայտ", "Create", "Statements")
+
+<ul>
+    @foreach (var item in ViewBag.LessonList)
+    {
+        <li>@item.Name</li>
+    }
+</ul>

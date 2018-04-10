@@ -7,6 +7,7 @@ namespace DistanceLearningGraduation.Models
 {
     public class Statement
     {
+        public string UserID { set; get; }
         public int StatementID { set; get; }
         public string Firstname { set; get; }
         public string Secondname { set; get; }

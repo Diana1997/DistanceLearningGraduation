@@ -451,7 +451,7 @@ namespace DistanceLearningGraduation.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Learn");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

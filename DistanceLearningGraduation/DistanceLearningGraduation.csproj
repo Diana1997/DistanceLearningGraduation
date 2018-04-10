@@ -195,6 +195,7 @@
     <Compile Include="Controllers\ExamsController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LearnController.cs" />
     <Compile Include="Controllers\LecturesController.cs" />
     <Compile Include="Controllers\LessonsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -210,6 +211,14 @@
     <Compile Include="Migrations\201804081436335_LessonCOurseID.Designer.cs">
       <DependentUpon>201804081436335_LessonCOurseID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804091543239_StatementUserdID.cs" />
+    <Compile Include="Migrations\201804091543239_StatementUserdID.Designer.cs">
+      <DependentUpon>201804091543239_StatementUserdID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804101343019_usercourse.cs" />
+    <Compile Include="Migrations\201804101343019_usercourse.Designer.cs">
+      <DependentUpon>201804101343019_usercourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -224,6 +233,7 @@
     <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\Statement.cs" />
     <Compile Include="Models\Tribune.cs" />
+    <Compile Include="Models\UserCourse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -331,6 +341,7 @@
     <Content Include="Views\Exams\Details.cshtml" />
     <Content Include="Views\Exams\Edit.cshtml" />
     <Content Include="Views\Exams\Index.cshtml" />
+    <Content Include="Views\Learn\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -351,6 +362,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804081436335_LessonCOurseID.resx">
       <DependentUpon>201804081436335_LessonCOurseID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091543239_StatementUserdID.resx">
+      <DependentUpon>201804091543239_StatementUserdID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804101343019_usercourse.resx">
+      <DependentUpon>201804101343019_usercourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

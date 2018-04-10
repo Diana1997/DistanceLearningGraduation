@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DistanceLearningGraduation.Models;
+using Microsoft.AspNet.Identity;
 
 namespace DistanceLearningGraduation.Controllers
 {
@@ -50,11 +51,26 @@ namespace DistanceLearningGraduation.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StatementID,Firstname,Secondname,Lastname,Address,Phone,Birthday,Email,Confirm,FacultyID,TribuneID,CourseID")] Statement statement)
+        public ActionResult Create(Statement statement)
         {
             if (ModelState.IsValid)
             {
-                db.Statements.Add(statement);
+                string currentUserID = User.Identity.GetUserId();
+                db.Statements.Add(new Statement() {
+                    UserID = currentUserID,
+                    StatementID = statement.StatementID,
+                    Firstname = statement.Firstname,
+                    Secondname = statement.Secondname,
+                    Lastname = statement.Lastname,
+                    Address = statement.Address,
+                    Phone = statement.Phone,
+                    Birthday = statement.Birthday,
+                    Email =statement.Email,
+                    Confirm = false,
+                    FacultyID = statement.FacultyID,
+                    TribuneID = statement.TribuneID,
+                    CourseID = statement.CourseID,
+                });
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -88,11 +104,32 @@ namespace DistanceLearningGraduation.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StatementID,Firstname,Secondname,Lastname,Address,Phone,Birthday,Email,Confirm,FacultyID,TribuneID,CourseID")] Statement statement)
+        public ActionResult Edit(Statement statement)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(statement).State = EntityState.Modified;
+                string currentUserID = User.Identity.GetUserId();
+                db.Entry(new Statement()
+                {
+                    UserID = currentUserID,
+                    StatementID = statement.StatementID,
+                    Firstname = statement.Firstname,
+                    Secondname = statement.Secondname,
+                    Lastname = statement.Lastname,
+                    Address = statement.Address,
+                    Phone = statement.Phone,
+                    Birthday = statement.Birthday,
+                    Email = statement.Email,
+                    Confirm = true,
+                    FacultyID = statement.FacultyID,
+                    TribuneID = statement.TribuneID,
+                    CourseID = statement.CourseID,
+                }).State = EntityState.Modified;
+                db.UserCourse.Add(new UserCourse()
+                {
+                    UserID = currentUserID,
+                    CourseID = statement.CourseID,
+                });
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

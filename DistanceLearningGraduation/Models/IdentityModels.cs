@@ -29,7 +29,7 @@ namespace DistanceLearningGraduation.Models
         public DbSet<Exam> Exams { set; get; }
         public DbSet<Question> Questions { set; get; }
         public DbSet<Answer> Answers { set; get; }
-
+        public DbSet<UserCourse> UserCourse { set; get; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
