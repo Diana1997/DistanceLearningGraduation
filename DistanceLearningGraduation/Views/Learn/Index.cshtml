@@ -9,7 +9,15 @@
 <ul>
     @foreach (var item in ViewBag.LessonList)
     {
-      //  @Html.ActionLink()
+        @Html.ActionLink((string) @item.Name, "GetLecturesByLessonId", "Learn",new { id = item.LessonID} );
+      //  <li>@item.Name</li>
+    }
+</ul>
+<ul>
+
+    @foreach (var item in ViewBag.LectureList)
+    {
         <li>@item.Name</li>
     }
+
 </ul>

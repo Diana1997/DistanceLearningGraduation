@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Անելացնել նորը", "Create")
 </p>
 <table class="table">
     <tr>
@@ -23,9 +23,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FacultyID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FacultyID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FacultyID })
+            @Html.ActionLink("Փոփոխել", "Edit", new { id=item.FacultyID }) |
+            @Html.ActionLink("Մանրամասն", "Details", new { id=item.FacultyID }) |
+            @Html.ActionLink("Ջնջել", "Delete", new { id=item.FacultyID })
         </td>
     </tr>
 }
