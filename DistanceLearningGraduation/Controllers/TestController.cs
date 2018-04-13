@@ -18,7 +18,16 @@ namespace DistanceLearningGraduation.Controllers
         }
         public ActionResult Create()
         {
+            //Question
+            ViewBag.CourseID = new SelectList(db.Courses, "CourseID", "Name");
+            ViewBag.LessonID = new SelectList(db.Lessons, "LessonID", "Name");
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult(Question question, Answer answer)
+        {
+
         }
     }
 }
