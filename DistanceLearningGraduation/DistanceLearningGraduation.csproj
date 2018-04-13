@@ -233,6 +233,7 @@
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\Statement.cs" />
+    <Compile Include="Models\Test.cs" />
     <Compile Include="Models\Tribune.cs" />
     <Compile Include="Models\UserCourse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
