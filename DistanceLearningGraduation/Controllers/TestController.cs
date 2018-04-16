@@ -25,9 +25,9 @@ namespace DistanceLearningGraduation.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult(Question question, Answer answer)
+        public ActionResult Create(Question question, Answer answer)
         {
-
+            return View();
         }
     }
 }

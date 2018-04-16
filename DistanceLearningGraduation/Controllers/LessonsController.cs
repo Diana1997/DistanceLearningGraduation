@@ -19,7 +19,6 @@ namespace DistanceLearningGraduation.Controllers
         {
             var lessons = db.Lessons.Include(l => l.Course);
             return View(lessons.ToList());
-            return View();
         }
 
         // GET: Lessons/Details/5

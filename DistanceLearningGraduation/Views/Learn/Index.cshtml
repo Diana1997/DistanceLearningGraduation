@@ -7,17 +7,24 @@
 @Html.ActionLink("Ուղարկել ընդունելիության հայտ", "Create", "Statements")
 
 <ul>
-    @foreach (var item in ViewBag.LessonList)
+    @if (ViewBag.LessonList != null)
     {
-        @Html.ActionLink((string) @item.Name, "GetLecturesByLessonId", "Learn",new { id = item.LessonID} );
-      //  <li>@item.Name</li>
+        foreach (var item in ViewBag.LessonList)
+        {
+            @Html.ActionLink((string)@item.Name, "Index", new { id = item.LessonID });
+        }
     }
 </ul>
-<ul>
 
-    @foreach (var item in ViewBag.LectureList)
+@if(ViewBag.LectureList != null)
+{
+    foreach (var item in ViewBag.LectureList)
     {
-        <li>@item.Name</li>
+        <div>
+            <p> @item.Name</p>
+            <div>@item.Links</div>
+            @Html.ActionLink("Read", "Read", new { path = item.Path },  new{ target = "_new"})
+        </div>
+       
     }
-
-</ul>
+}

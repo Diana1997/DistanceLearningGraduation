@@ -60,7 +60,7 @@ namespace DistanceLearningGraduation.Controllers
                 {
                     LectureID = lecture.LectureID,
                     Name = lecture.Name,
-                    Path = "~/Lectures/" + file.FileName,
+                    Path = file.FileName,
                     LessonID = lecture.LessonID,
                     Links = lecture.Links,
                     CourseID = lecture.CourseID,
@@ -143,5 +143,6 @@ namespace DistanceLearningGraduation.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

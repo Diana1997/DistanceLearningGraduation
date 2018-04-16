@@ -346,6 +346,7 @@
     <Content Include="Views\Learn\Index.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Test\Create.cshtml" />
+    <Content Include="Views\Learn\Read.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

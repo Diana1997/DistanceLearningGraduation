@@ -12,23 +12,20 @@ namespace DistanceLearningGraduation.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Learn
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             var currentUserId = User.Identity.GetUserId();
             var CourseList = db.UserCourse.Where(x => x.UserID == currentUserId);
             var CourseID = CourseList.Count() > 0 ? CourseList.First().CourseID : 0;
-            if (CourseID > 0)
-                ViewBag.LessonList = db.Lessons.Where(x => x.CourseID == CourseID).ToList();
-            else
-                ViewBag.LessonList = "";
-            ViewBag.LectureList = "";
+            ViewBag.LessonList = db.Lessons.Where(x => x.CourseID == CourseID).ToList();
+            ViewBag.LectureList = db.Lectures.Where(x => x.LessonID == id);
             return View();
         }
 
-        public void GetLecturesByLessonId(int? id)
+        public ActionResult Read(string path)
         {
-            ViewBag.LectureList = db.Lectures.Where(x => x.LessonID == id);
-          //  return View();
+            ViewBag.Path = path;
+            return View();
         }
     }
 }
