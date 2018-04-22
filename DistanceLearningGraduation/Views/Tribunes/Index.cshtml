@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Ամբիոններ</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Ավելացնել նորը", "Create")
 </p>
 <table class="table">
     <tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TribuneID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TribuneID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TribuneID })
+            @Html.ActionLink("Փոփոխել", "Edit", new { id=item.TribuneID }) |
+            @Html.ActionLink("Մանրամասն", "Details", new { id=item.TribuneID }) |
+            @Html.ActionLink("Ջնջել", "Delete", new { id=item.TribuneID })
         </td>
     </tr>
 }

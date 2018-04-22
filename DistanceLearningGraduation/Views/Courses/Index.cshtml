@@ -4,18 +4,20 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Բաժիններ</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Անելացնել նորը", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Tribune.Name)
+            Ամբիոն
+            @*@Html.DisplayNameFor(model => model.Tribune.Name)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Բաժին
+            @*@Html.DisplayNameFor(model => model.Name)*@
         </th>
         <th></th>
     </tr>
@@ -29,9 +31,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
+            @Html.ActionLink("Փոփոխել", "Edit", new { id=item.CourseID }) |
+            @Html.ActionLink("Մանրամասն", "Details", new { id=item.CourseID }) |
+            @Html.ActionLink("Ջնջել", "Delete", new { id=item.CourseID })
         </td>
     </tr>
 }
