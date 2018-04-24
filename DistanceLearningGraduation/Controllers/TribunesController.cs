@@ -29,6 +29,7 @@ namespace DistanceLearningGraduation.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Tribune tribune = db.Tribunes.Find(id);
+            tribune.Faculty = db.Faculties.Find(tribune.FacultyID);
             if (tribune == null)
             {
                 return HttpNotFound();
