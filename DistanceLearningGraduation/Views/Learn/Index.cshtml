@@ -11,7 +11,7 @@
     {
         foreach (var item in ViewBag.LessonList)
         {
-            @Html.ActionLink((string)@item.Name, "Index", new { id = item.LessonID });
+    <li>@Html.ActionLink((string)@item.Name, "Index", new { id = item.LessonID });</li>
         }
     }
 </ul>

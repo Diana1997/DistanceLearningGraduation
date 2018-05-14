@@ -39,7 +39,8 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.Answers[0].AnswerText, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.RadioButtonFor(model => model.Answers[0].IsRight) 
+        
+        @Html.RadioButtonFor(model => model.Answers[0].IsRight,) 
         <div class="col-md-10">
             @Html.EditorFor(model => model.Answers[0].AnswerText, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Answers[0].AnswerText, "", new { @class = "text-danger" })
