@@ -23,10 +23,10 @@ namespace DistanceLearningGraduation.Controllers
             ViewBag.LessonID = new SelectList(db.Lessons, "LessonID", "Name");
             return View();
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Question question, Answer answer)
+
+        public ActionResult Create(Test test, string answer)
         {
+
             return View();
         }
     }
