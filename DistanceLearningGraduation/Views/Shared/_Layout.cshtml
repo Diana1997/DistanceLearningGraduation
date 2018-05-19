@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+   <div class="navbar navbar-inverse navbar-fixed-top myHeaderStyle">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,14 +18,15 @@
                     <span class="icon-bar"></span>
                 </button>
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
-            </div>
+           </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Գլխավոր", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Մեր մասին", "About", "Home")</li>
-                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                    <li>
+                    @Html.ActionLink("Գլխավոր", "Index", "Home")</li>
+                    <li >
+                    @Html.ActionLink("Մեր մասին", "About", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+               @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
@@ -42,3 +43,16 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
+<style>
+    .myHeaderStyle {
+        background-color: #2d3d96;
+    }
+    .linkStyle {
+        color: white;
+    }
+    .navbar-inverse .navbar-nav > li > a{
+        color: white;
+    }
+</style>

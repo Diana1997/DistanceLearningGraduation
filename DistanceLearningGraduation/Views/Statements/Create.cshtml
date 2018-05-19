@@ -3,130 +3,113 @@
 @{
     ViewBag.Title = "Create";
 }
+<div class="modal-content">
+    <h2 style="margin-left: 354px;">Ընդունելիության հայտ</h2>
 
-<h2>Ընդունելիության հայտ</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <label class = "control-label col-md-2">Անուն</label>
-            @*@Html.LabelFor(model => model.Firstname, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Ազգանուն</label>
-            @*@Html.LabelFor(model => model.Secondname, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Secondname, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Secondname, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Հայրանուն</label>
-
-            @*@Html.LabelFor(model => model.Lastname, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Lastname, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Հասցե</label>
-
-            @*@Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Հեռախոսահամար</label>
-
-            @*@Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Ծննդյան օր</label>
-            @*@Html.LabelFor(model => model.Birthday, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Էլ-փոստ</label>
-            @*@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.Confirm, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Confirm)
-                    @Html.ValidationMessageFor(model => model.Confirm, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-2">Անուն</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>*@
 
-        <div class="form-group">
-            <label class="control-label col-md-2">Ֆակուլտետ</label>
-
-            @*@Html.LabelFor(model => model.FacultyID, "FacultyID", htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.DropDownList("FacultyID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.FacultyID, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-2">Ազգանուն</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Secondname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Secondname, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2">Ամբիոն</label>
-
-            @*@Html.LabelFor(model => model.TribuneID, "TribuneID", htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.DropDownList("TribuneID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.TribuneID, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-2">Հայրանուն</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Lastname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2">Բաժին</label>
-
-            @*@Html.LabelFor(model => model.CourseID, "CourseID", htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.DropDownList("CourseID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CourseID, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-2">Հասցե</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Ուղարկել" class="btn btn-default" />
+            <div class="form-group">
+                <label class="control-label col-md-2">Հեռախոսահամար</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
-    </div>
-}
 
-<div>
-    @Html.ActionLink("Վերադառնալ ցուցակին", "Index")
+            <div class="form-group" style="    margin-left: 471px;margin-top: -528px;">
+                <label class="control-label col-md-2" style="    margin-top: -34px; margin-left: 19px;">Ծննդյան օր</label>
+                <div class="col-md-10" style="    margin-left: 122px; margin-top: -34px;">
+                    @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group"  style="margin-left: 471px; margin-top: -210px;">
+                <label class="control-label col-md-2" style="    margin-top: -32px;">Էլ-փոստ</label>
+                <div class="col-md-10" style="margin-left: 122px; margin-top: -33px;">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+                <div class="form-group" style="margin-left: 471px;">
+                    <label class="control-label col-md-2" style="    margin-top: -150px;
+    margin-left: 22px;">Ֆակուլտետ</label>
+                    <div class="col-md-10" style="    margin-top: -147px;
+    margin-left: 124px;">
+                        @Html.DropDownList("FacultyID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.FacultyID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-left: 471px;">
+                    <label class="control-label col-md-2" style="margin-top: -111px;
+    margin-left: -5px;">Ամբիոն</label>
+                    <div class="col-md-10" style="    margin-left: 122px;
+    margin-top: -111px;">
+                        @Html.DropDownList("TribuneID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.TribuneID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-left: 471px;">
+                    <label class="control-label col-md-2" style="margin-top: -76px;
+    margin-left: -6px;">Բաժին</label>
+                    <div class="col-md-10" style="margin-left: 124px;
+    margin-top: -80px;">
+                        @Html.DropDownList("CourseID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CourseID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="    margin-left: 369px;
+    margin-top: -48px;">
+                    <input type="submit" value="Ուղարկել" class="btn btn-primary" style="    width: 282px; height: 38px;" />
+                </div>
+            </div>
+    }
+    @*<div>
+        @Html.ActionLink("Վերադառնալ ցուցակին", "Index")
+    </div>*@
 </div>
+
+

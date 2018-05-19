@@ -3,20 +3,39 @@
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Բարև    " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Ելք</a></li>
+        </ul>
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Գրանցվել", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Մուտք գործել", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <ul class="nav navbar-nav navbar-right myLoginStyle">
+        <li>
+            <span class="glyphicon glyphicon-user">
+                @Html.ActionLink("Գրանցվել", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "linkStyle"})
+            </span>
+        </li>
+        <li>
+            <span class="glyphicon glyphicon-log-in" style="margin-left: 13px;">
+                @Html.ActionLink("Մուտք գործել", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "linkStyle" })
+            </span>
+        </li>
     </ul>
 }
+
+<style>
+    .myLoginStyle {
+        margin-top: 15px;
+        font-size: 15px;
+        color: white;
+    }
+    .linkStyle {
+        color: white;
+    }
+</style>

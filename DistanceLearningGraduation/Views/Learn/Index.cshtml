@@ -1,29 +1,29 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-@Html.ActionLink("Ուղարկել ընդունելիության հայտ", "Create", "Statements")
-
-<ul>
-    @if (ViewBag.LessonList != null)
-    {
-        foreach (var item in ViewBag.LessonList)
+<div class="modal-content">
+    @Html.ActionLink("Ուղարկել ընդունելիության հայտ", "Create", "Statements")
+    <ul>
+        @if (ViewBag.LessonList != null)
         {
-    <li>@Html.ActionLink((string)@item.Name, "Index", new { id = item.LessonID });</li>
+            foreach (var item in ViewBag.LessonList)
+            {
+                <li>@Html.ActionLink((string)@item.Name, "Index", new { id = item.LessonID });</li>
+            }
+        }
+    </ul>
+
+    @if (ViewBag.LectureList != null)
+    {
+        foreach (var item in ViewBag.LectureList)
+        {
+            <div>
+                <p> @item.Name</p>
+                <div>@item.Links</div>
+                @Html.ActionLink("Read", "Read", new { path = item.Path }, new { target = "_new" })
+            </div>
         }
     }
-</ul>
 
-@if(ViewBag.LectureList != null)
-{
-    foreach (var item in ViewBag.LectureList)
-    {
-        <div>
-            <p> @item.Name</p>
-            <div>@item.Links</div>
-            @Html.ActionLink("Read", "Read", new { path = item.Path },  new{ target = "_new"})
-        </div>
-    }
-}
+</div>

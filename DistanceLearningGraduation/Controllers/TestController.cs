@@ -26,7 +26,6 @@ namespace DistanceLearningGraduation.Controllers
 
         public ActionResult Create(Test test, string answer)
         {
-
             return View();
         }
 
