@@ -109,7 +109,8 @@ namespace DistanceLearningGraduation.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Faculty faculty = db.Faculties.Find(id);
+            Faculty faculty = db.Faculties.Include(y => y.Tribunes).Where(x => x.FacultyID == id).FirstOrDefault();
+            db.Tribunes.RemoveRange(faculty.Tribunes);
             db.Faculties.Remove(faculty);
             db.SaveChanges();
             return RedirectToAction("Index");
