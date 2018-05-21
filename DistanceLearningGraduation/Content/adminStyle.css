@@ -1,0 +1,19 @@
+﻿body {
+}
+.linkStyle{
+    color:white;
+}
+.btn-m-top {
+    margin-top: 27px;
+}
+.thead-style {
+    background-color: #428bca;
+    color: white;
+    border-color: #428bca;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tbl-margin {
+    margin-top: 6px;
+}

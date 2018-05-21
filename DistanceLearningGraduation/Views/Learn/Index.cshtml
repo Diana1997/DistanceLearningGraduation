@@ -2,28 +2,62 @@
     ViewBag.Title = "Index";
 }
 
-<div class="modal-content">
-    @Html.ActionLink("Ուղարկել ընդունելիության հայտ", "Create", "Statements")
-    <ul>
+<div class="modal-content" style="height: 1191px;">
+    <div>
+        <img src="~/Images/learn4.jpg" style="    height: 295px;width: 1139px;" />
+    </div>
+
+    @*@Html.ActionLink("Ուղարկել ընդունելիության հայտ", "Create", "Statements")*@
+    <ul class="list-group" style="    width: 380px;">
         @if (ViewBag.LessonList != null)
         {
             foreach (var item in ViewBag.LessonList)
             {
-                <li>@Html.ActionLink((string)@item.Name, "Index", new { id = item.LessonID });</li>
+                <li class="list-group-item list-group-item-success">
+                    @Html.ActionLink((string)@item.Name, "Index", new { id = item.LessonID }, htmlAttributes: new {@class = "link" })
+                </li>
             }
         }
     </ul>
-
-    @if (ViewBag.LectureList != null)
-    {
-        foreach (var item in ViewBag.LectureList)
+    <a href="@Url.Action("Create", "Statements")"
+       class="btn btn-success" style=" margin-top: -1813px;
+    margin-left: 901px;">
+        Ուղարկել ընդունելիության հայտ
+    </a>
+    <div style="    border: solid 1px;width: 486px;margin-top: -948px;margin-left: 386px;  border-color: white;">
+        @if (ViewBag.LectureList != null)
         {
-            <div>
-                <p> @item.Name</p>
-                <div>@item.Links</div>
-                @Html.ActionLink("Read", "Read", new { path = item.Path }, new { target = "_new" })
-            </div>
-        }
-    }
+            <h3 ssstyle="margin-bottom: 26px;">@ViewBag.Lesson</h3>
 
+            foreach (var item in ViewBag.LectureList)
+            {
+                <div>
+                    <p> @item.Name</p>
+                    <a>@item.Links</a>
+                    <br />
+                    <a href="@Url.Action("Read", "Learn", new { path = item.Path })" target="_blank" class="btn btn-success" style="margin-left: 373px;">
+                        Կարդալ
+                    </a>
+                    @*@Html.ActionLink("Read", "Read", new { path = item.Path }, new { target = "_new" })*@
+                </div>
+                <hr />
+            }
+        }
+    </div>
+    <button class="btn btn-danger" style="    margin-left: 901px; margin-top: -862px;width: 237px;height: 35px;">
+        Անցնել թեստը
+    </button>
 </div>
+
+<style>
+    p {
+        font-size: 17px;
+        font-style: ITALIC;
+    }
+    .link{
+        color:black;
+    }
+    body {
+        background-color: #dcdcdc9c;
+    }
+</style>

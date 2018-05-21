@@ -19,6 +19,8 @@ namespace DistanceLearningGraduation.Controllers
             var CourseID = CourseList.Count() > 0 ? CourseList.First().CourseID : 0;
             ViewBag.LessonList = db.Lessons.Where(x => x.CourseID == CourseID).ToList();
             ViewBag.LectureList = db.Lectures.Where(x => x.LessonID == id);
+            var lesson = db.Lectures.Where(x => x.LessonID == id).FirstOrDefault();
+            ViewBag.Lesson = lesson?.Lesson.Name;
             return View();
         }
 

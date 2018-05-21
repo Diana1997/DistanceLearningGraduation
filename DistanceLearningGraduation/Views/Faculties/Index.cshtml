@@ -4,30 +4,39 @@
     ViewBag.Title = "Index";
 }
 
+<link rel="stylesheet" type="text/css" href="~/Content/adminStyle.css" />
+
 <h2>Ֆակուլտետներ</h2>
+<button class="btn btn-success btn-m-top">
+    @Html.ActionLink("Ավելացնել նորը", "Create", "Faculties", htmlAttributes: new { @class = "linkStyle" })
+</button>
+<table class="table table-hover tbl-margin">
+    <thead class="thead-style">
+        <tr>
+            <th>
+                Անուն
+            </th>
+            <th></th>
+        </tr>
+    </thead>
 
-<p>
-    @Html.ActionLink("Ավելացնել նորը", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Փոփոխել", "Edit", new { id=item.FacultyID }) |
-            @Html.ActionLink("Մանրամասն", "Details", new { id=item.FacultyID }) |
-            @Html.ActionLink("Ջնջել", "Delete", new { id=item.FacultyID })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                @Html.ActionLink("Փոփոխել", "Edit", new { id = item.FacultyID })
+                |
+                <button class="btn btn-success btn-xs"><span class="glyphicon glyphicon-list" data-placement="top" data-toggle="tooltip"></span></button>
+                @Html.ActionLink("Մանրամասն", "Details", new { id = item.FacultyID })
+                |
+                <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button>
+                @Html.ActionLink("Ջնջել", "Delete", new { id = item.FacultyID })
+            </td>
+        </tr>
+    }
 </table>

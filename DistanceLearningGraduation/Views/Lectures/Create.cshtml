@@ -4,18 +4,17 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Ավելացնել</h2>
 
 @using (Html.BeginForm("Create", "Lectures", FormMethod.Post, new { enctype = "multipart/form-data" })) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Lecture</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class = "control-label col-md-2">Վերնագիր</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
@@ -23,25 +22,23 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Path, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="file" name="file" class="form-control" />
-
-                @*@Html.EditorFor(model => model.Path, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Path, "", new { @class = "text-danger" })*@
+            <label class="control-label col-md-2">Ընտրել ֆայլը</label>
+            <div style="    margin-left: 213px; position: absolute; margin-top: 3px;" >
+                <input type="file" name="file" />
             </div>
+            
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Links, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Օգտակար հղումներ</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Links, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Links, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Links, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.LessonID, "LessonID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Առարկա</label>
             <div class="col-md-10">
                 @Html.DropDownList("LessonID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.LessonID, "", new { @class = "text-danger" })
@@ -49,7 +46,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CourseID, "CourseID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Բաժին</label>
             <div class="col-md-10">
                 @Html.DropDownList("CourseID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CourseID, "", new { @class = "text-danger" })
@@ -58,12 +55,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Ավելացնել" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Վերադառնալ ցուցակին", "Index")
 </div>

@@ -4,36 +4,51 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Առարկաներ</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Course.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Course.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LessonID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LessonID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LessonID })
-        </td>
-    </tr>
-}
+<button class="btn btn-success btn-m-top">
+    @Html.ActionLink("Ավելացնել նորը", "Create", "Lessons", htmlAttributes: new { @class = "linkStyle" })
+</button>
+<table class="table table-hover tbl-margin">
+    <thead class="thead-style">
+        <tr>
+            <th>
+                Բաժին
+            </th>
+            <th>
+                Առարկա
+            </th>
+            <th></th>
+        </tr>
+</thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Lessons", new { id = item.LessonID })"
+                       class="btn btn-primary btn-xs">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    |
+                    <a href="@Url.Action("Details", "Lessons", new { id = item.LessonID })"
+                       class="btn btn-success btn-xs">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </a>
+                    |
+                    <a href="@Url.Action("Delete", "Lessons", new { id = item.LessonID })"
+                       class="btn btn-danger btn-xs">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+        }
 
 </table>
+
+<link rel="stylesheet" type="text/css" href="~/Content/adminStyle.css" />
