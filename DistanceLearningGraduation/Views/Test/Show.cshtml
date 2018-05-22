@@ -8,10 +8,35 @@
     <title>Test</title>
     <link rel="stylesheet" href="~/Content/normalize.min.css">
     <link rel="stylesheet prefetch" href="~/Content/main.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
-    <div class="container">
-        <div id="quiz1"></div>
+<body style="    background-color: #f7f3f3c2;">
+    <div class="navbar navbar-inverse navbar-fixed-top myHeaderStyle">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Գլխավոր", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Մեր մասին", "About", "Home")
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container1 modal-content" style="    width: 82%;margin: auto;">
+        <div id="quiz1" class="quizStyle"></div>
     </div>
     <script type="text/javascript" src="~/Scripts/jquery-2.2.4.min.js"></script>
     <script type="text/javascript" src="~/Scripts/main.js"></script>
@@ -20,7 +45,7 @@
 </html>
 
 <style>
-    .container {
+    .container1 {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -33,5 +58,25 @@
         background: #fff;
         padding: 2rem;
         border-radius: 3px;
+    }
+    .quizStyle {
+        margin-top: -252px;
+        margin-left: -423px;
+    }
+</style>
+
+
+
+<style>
+    .myHeaderStyle {
+        background-color: #2d3d96;
+    }
+
+    .linkStyle {
+        color: white;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
     }
 </style>

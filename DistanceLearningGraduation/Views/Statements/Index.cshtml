@@ -4,59 +4,71 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Ընդունելիության հայտերի ցուցակ</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
+
         <th>
-            @Html.DisplayNameFor(model => model.Course.Name)
+            Ֆակուլտետ
+            @*@Html.DisplayNameFor(model => model.Faculty.Name)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Faculty.Name)
+            Ամբիոն
+            @*@Html.DisplayNameFor(model => model.Tribune.Name)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tribune.Name)
+            Բաժին
+            @*@Html.DisplayNameFor(model => model.Course.Name)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Firstname)
+            Անուն
+            @*@Html.DisplayNameFor(model => model.Firstname)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Secondname)
+            Ազգանուն
+           @* @Html.DisplayNameFor(model => model.Secondname)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Lastname)
+            Հայրանուն
+            @*@Html.DisplayNameFor(model => model.Lastname)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Address)
+            @*@Html.DisplayNameFor(model => model.Address)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Phone)
+            Հեռախոսահամար
+            @*@Html.DisplayNameFor(model => model.Phone)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Birthday)
+            Ծննդյան օր
+            @*@Html.DisplayNameFor(model => model.Birthday)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            Էլ-փոստ
+            @*@Html.DisplayNameFor(model => model.Email)*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Confirm)
+            Հաստատել
+            @*@Html.DisplayNameFor(model => model.Confirm)*@
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Course.Name)
-        </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Faculty.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tribune.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Firstname)
@@ -83,9 +95,10 @@
             @Html.DisplayFor(modelItem => item.Confirm)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StatementID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StatementID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StatementID })
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.StatementID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StatementID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StatementID })
         </td>
     </tr>
 }
