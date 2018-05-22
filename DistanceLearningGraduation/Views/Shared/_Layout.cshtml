@@ -19,12 +19,18 @@
                 </button>
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav navbar-left" style="    margin-top: 16px;">
                     <li>
-                    @Html.ActionLink("Գլխավոր", "Index", "Home")</li>
-                    <li >
-                    @Html.ActionLink("Մեր մասին", "About", "Home")</li>
+                        <span class="glyphicon glyphicon-home" style="color: white">
+                            @Html.ActionLink("Գլխավոր", "Index", "Home", htmlAttributes: new { @class = "linkStyle" })
+                        </span>
+                   </li>
+                   <li>
+                        <span class="glyphicon glyphicon-info-sign" style="color: white; margin-left: 17px;">
+                            @Html.ActionLink("Մեր մասին", "About", "Home", htmlAttributes: new { @class="linkStyle"})
+                        </span>
+                   </li>
                 </ul>
                @Html.Partial("_LoginPartial")
             </div>

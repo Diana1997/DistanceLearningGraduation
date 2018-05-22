@@ -31,11 +31,11 @@
 
                 /* Text
                  ---------------------------*/
-                questionCount_text: "Question %current_index of %totalQuestions",
-                backButton_text: "Previous Question",
-                nextButton_text: "Next Question",
-                completeButton_text: "Finish Quiz",
-                viewResultsButton_text: "View Results",
+                questionCount_text: "Հարց %current_index of %totalQuestions",
+                backButton_text: "Նախորդը",
+                nextButton_text: "Հաջորդը",
+                completeButton_text: "Ավարտել թեստը",
+                viewResultsButton_text: "Նայել արդյունքը",
                 resultsHeader_text: "Here's how you did.",
                 quizScore_text: "You answered %totalScore out of %totalQuestions questions correctly",
                 quizScoreMessage_text: "",
