@@ -7,100 +7,121 @@
 <h2>Ընդունելիության հայտերի ցուցակ</h2>
 
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
-<table class="table">
-    <tr>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<table class="table table-hover" style="    margin-top: 38px; margin-left: -60px;">
+    <thead class="thead-style" style="font-size:16px;">
+        <tr>
 
-        <th>
-            Ֆակուլտետ
-            @*@Html.DisplayNameFor(model => model.Faculty.Name)*@
-        </th>
-        <th>
-            Ամբիոն
-            @*@Html.DisplayNameFor(model => model.Tribune.Name)*@
-        </th>
-        <th>
-            Բաժին
-            @*@Html.DisplayNameFor(model => model.Course.Name)*@
-        </th>
-        <th>
-            Անուն
-            @*@Html.DisplayNameFor(model => model.Firstname)*@
-        </th>
-        <th>
-            Ազգանուն
-           @* @Html.DisplayNameFor(model => model.Secondname)*@
-        </th>
-        <th>
-            Հայրանուն
-            @*@Html.DisplayNameFor(model => model.Lastname)*@
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.Address)*@
-        </th>
-        <th>
-            Հեռախոսահամար
-            @*@Html.DisplayNameFor(model => model.Phone)*@
-        </th>
-        <th>
-            Ծննդյան օր
-            @*@Html.DisplayNameFor(model => model.Birthday)*@
-        </th>
-        <th>
-            Էլ-փոստ
-            @*@Html.DisplayNameFor(model => model.Email)*@
-        </th>
-        <th>
-            Հաստատել
-            @*@Html.DisplayNameFor(model => model.Confirm)*@
-        </th>
-        <th></th>
-    </tr>
+            <th>
+                Ֆակուլտետ
+                @*@Html.DisplayNameFor(model => model.Faculty.Name)*@
+            </th>
+            <th>
+                Ամբիոն
+                @*@Html.DisplayNameFor(model => model.Tribune.Name)*@
+            </th>
+            <th>
+                Բաժին
+                @*@Html.DisplayNameFor(model => model.Course.Name)*@
+            </th>
+            <th>
+                Անուն
+                @*@Html.DisplayNameFor(model => model.Firstname)*@
+            </th>
+            <th>
+                Ազգանուն
+                @* @Html.DisplayNameFor(model => model.Secondname)*@
+            </th>
+            <th>
+                Հայրանուն
+                @*@Html.DisplayNameFor(model => model.Lastname)*@
+            </th>
+            <th>
+                Հասցե
+                @*@Html.DisplayNameFor(model => model.Address)*@
+            </th>
+            <th>
+                Հեռախոսահամար
+                @*@Html.DisplayNameFor(model => model.Phone)*@
+            </th>
+            <th>
+                Ծննդյան օր
+                @*@Html.DisplayNameFor(model => model.Birthday)*@
+            </th>
+            <th>
+                Էլ-փոստ
+                @*@Html.DisplayNameFor(model => model.Email)*@
+            </th>
+            <th>
+                Հաստատել
+                @*@Html.DisplayNameFor(model => model.Confirm)*@
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
 
-@foreach (var item in Model) {
-    <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Faculty.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tribune.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Firstname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Secondname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Confirm)
+                </td>
+                <td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Faculty.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tribune.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Course.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Firstname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Secondname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lastname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Birthday)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Confirm)
-        </td>
-        <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.StatementID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.StatementID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StatementID })*@
 
-            @Html.ActionLink("Edit", "Edit", new { id = item.StatementID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.StatementID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.StatementID })
-        </td>
-    </tr>
-}
+
+
+                    <a href="@Url.Action("Edit", "Statements", new { id = item.StatementID })"
+                       class="btn btn-primary btn-xs">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="@Url.Action("Details", "Statements", new { id = item.StatementID })"
+                       class="btn btn-success btn-xs">
+                        <span class="glyphicon glyphicon-list"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Statements", new { id = item.StatementID })"
+                       class="btn btn-danger btn-xs">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+        }
 
 </table>
+
+
+<link rel="stylesheet" type="text/css" href="~/Content/adminStyle.css" />

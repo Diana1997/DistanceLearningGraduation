@@ -1,5 +1,6 @@
 ﻿.divMainImage {
-    border: solid 1px;
+    margin-left: -16px;
+    margin-top: -19px;
 }
 .mainImage {
     width: 1138px;
