@@ -3,16 +3,58 @@
     ViewBag.Title = "Index";
 }
 
+<div class="modal-content" style="    height: 559px;">
+    <div>
+        <img src="~/Images/bg11.jpg" style="width: 1139px; height: 212px;     background-color: #cbf4fb;"/>
+    </div>
+    <div class="bigDiv">
+        <img src="~/Images/Faculty.jpg" style="height: 165px;
+    width: 244px;" />
+        <a href="@Url.Action("Index", "Faculties")" target="_blank">
+            Ֆակուլտետներ
+        </a>
+    </div>
+    <div class="bigDiv">
+        <img src="~/Images/tribune.png" style="height: 165px;
+    width: 244px;" />
+        <a href="@Url.Action("Index", "Tribunes")" target="_blank">
+            Ամբիոններ
+        </a>
+    </div>
+    <div class="bigDiv">
+        <img src="~/Images/course1.jpg" style="height: 165px;
+    width: 244px;" />
+        <a href="@Url.Action("Index", "Courses")" target="_blank">
 
-<div>
-    Ֆակուլտետներ
+            Բաժիններ
+        </a>
+    </div>
+    <div class="bigDiv">
+        <img src="~/Images/bid.svg" style="    height: 165px; width: 244px; background-color: #d6d6d64a;" />
+        <a style="font-size: 20px;" href="@Url.Action("Index", "Statements")" target="_blank">
+            Ընդունելիության հայտեր
+        </a>
+    </div>
 </div>
-<div>
-   Ամբիոններ
-</div>
-<div>
-    Բաժիններ
-</div>
-<div>
-    Ընդունելիության հայտեր
-</div>
+
+<style>
+    .bigDiv {
+        width: 250px;
+        border: solid;
+        height: 250px;
+        margin-top: 20px;
+        margin-left: 25px;
+        float: left;
+        border-color: #5656568c;
+        background-color: white;
+    }
+        .bigDiv a {
+            font-size: 24px;
+            /* text-align: center; */
+            /* margin: auto; */
+            /* margin-left: 19px; */
+            margin-top: 18px;
+            text-align: center;
+            display: block;
+        }
+</style>
