@@ -4,74 +4,91 @@
 	ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+
 @using (Html.BeginForm("Create", "Test", FormMethod.Post))
 {
 	@Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Question</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.Question.QuestionText, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Question.QuestionText, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Question.QuestionText, "", new { @class = "text-danger" })
+<div class="modal-content">
+    <div class="form-horizontal" style="margin-left: 151px;">
+        <h2>Ավելացնել թեստ</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Question.QuestionText, new { htmlAttributes = new { @class = "form-control", placeholder = "Հարց" } })
+                @Html.ValidationMessageFor(model => model.Question.QuestionText, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Question.CourseID, "CourseID", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("CourseID", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Question.CourseID, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Question.LessonID, "LessonID", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("LessonID", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Question.LessonID, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @*@Html.LabelFor(model => model.Answers[0].AnswerText, htmlAttributes: new { @class = "control-label col-md-2" })*@
 
 
-        <div class="col-md-10">
-            <input type="radio" name="answer" />
-            @Html.EditorFor(model => model.Answers[0].AnswerText, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Answers[0].AnswerText, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-10">
-            <input type="radio" name="answer" />
-            @Html.EditorFor(model => model.Answers[1].AnswerText, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Answers[1].AnswerText, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-10">
-            <input type="radio" name="answer" />
-            @Html.EditorFor(model => model.Answers[2].AnswerText, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Answers[2].AnswerText, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-10">
-            <input type="radio" name="answer" />
-            @Html.EditorFor(model => model.Answers[3].AnswerText, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Answers[3].AnswerText, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+        <div class="form-group">
+            <div class="col-md-10" style="    margin-bottom: 10px;">
+                <input type="radio" name="answer" class=" radioML" style="margin-left: -17px;margin-top: 13px;"/>
+                @Html.EditorFor(model => model.Answers[0].AnswerText, new { htmlAttributes = new { @class = "form-control", placeholder = "Պատասխան" } })
+                @Html.ValidationMessageFor(model => model.Answers[0].AnswerText, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-10" style="    margin-bottom: 10px;">
+                <input type="radio" name="answer" class=" radioML" style="margin-left: -17px;margin-top: 13px;"/>
+                @Html.EditorFor(model => model.Answers[1].AnswerText, new { htmlAttributes = new { @class = "form-control", placeholder = "Պատասխան" } })
+                @Html.ValidationMessageFor(model => model.Answers[1].AnswerText, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-10" style="    margin-bottom: 10px;">
+                <input type="radio" name="answer" class=" radioML" style="margin-left: -17px;margin-top: 13px;"/>
+                @Html.EditorFor(model => model.Answers[2].AnswerText, new { htmlAttributes = new { @class = "form-control", placeholder = "Պատասխան" } })
+                @Html.ValidationMessageFor(model => model.Answers[2].AnswerText, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-10" style="    margin-bottom: 10px;">
+                <input type="radio" name="answer" class=" radioML" style="margin-left: -17px;margin-top: 13px;"/>
+                @Html.EditorFor(model => model.Answers[3].AnswerText, new { htmlAttributes = new { @class = "form-control", placeholder = "Պատասխան" } })
+                @Html.ValidationMessageFor(model => model.Answers[3].AnswerText, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group" style="margin-left: -216px;">
+            @*@Html.LabelFor(model => model.Question.CourseID, "CourseID", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Բաժին</label>
+            <div class="col-md-10">
+                @Html.DropDownList("CourseID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Question.CourseID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="margin-left: -216px;">
+            <label class="control-label col-md-2">Առարկա</label>
+
+            @*@Html.LabelFor(model => model.Question.LessonID, "LessonID", htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-10">
+                @Html.DropDownList("LessonID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Question.LessonID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Ավելացնել" class="btn btn-default" style="margin-left: 23px;"/>
+            </div>
         </div>
     </div>
 </div>
+
 }
 
 <div>
-	@Html.ActionLink("Back to List", "Index")
+	@Html.ActionLink("Վերադառնալ ցուցակին", "Index","Test",  htmlAttributes: new  { @class = "link"})
 </div>
 
+<style>
+    .radioML {
+        position: absolute;
+        margin-top: 11px;
+        margin-left: -21px;
+    }
+    .link {
+        position: absolute;
+        margin-top: -39px;
+        margin-left: 63px;
+    }
+</style>

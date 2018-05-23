@@ -36,15 +36,15 @@
                 nextButton_text: "Հաջորդը",
                 completeButton_text: "Ավարտել թեստը",
                 viewResultsButton_text: "Նայել արդյունքը",
-                resultsHeader_text: "Here's how you did.",
-                quizScore_text: "You answered %totalScore out of %totalQuestions questions correctly",
+                resultsHeader_text: "Արդյունքերը",
+                quizScore_text: "Դուք պատասխանել  %totalScore-ը %totalQuestions-ից հարցերը ճիշտ են",
                 quizScoreMessage_text: "",
                 quizScoreRank_text: {
-                    a: "Perfect Score!",
-                    b: "Great Job!",
-                    c: "At least you passed.",
-                    d: "Should have studied more.",
-                    f: "Did you even try?"
+                    a: "Կատարյալ",
+                    b: "Հիանալի",
+                    c: "Գոնե անցաք",
+                    d: "Սովորեք ավելին",
+                    f: "Դուք նույնիսկ փորձել եք"
                 },
 
                 /* Options

@@ -24,10 +24,10 @@ namespace DistanceLearningGraduation.Controllers
             return View();
         }
 
-        public ActionResult Create(Test test, string answer)
-        {
-            return View();
-        }
+        //public ActionResult Create(Test test, string answer)
+        //{
+        //    return View();
+        //}
 
         public ActionResult Show()
         {

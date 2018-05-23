@@ -1,41 +1,49 @@
 ﻿$("#quiz1").dlxQuiz({
     quizData: {
         "questions": [{
-            "q": "Look at the following selector: $(\"div\")<br/> What does it select?",
-            "a": "All div elements",
+            "q": "Ո՞րն է div և span տեգերի տարբերությունը։",
+            "a": "div բլոկային էլեմենտ է, իսկ span տողային",
             "options": [
-                "All div elements",
-                "The first div element",
-                "All elements with the class \"div\""
+                "տարբերություն չկա",
+                "div բլոկային էլեմենտ է, իսկ span տողային",
+                "span բլոկային էլեմենտ է, իսկ div տողային", 
+                "span տեգը պետք չէ փակել"
             ]
         }, {
-            "q": "Which of the following is correct",
-            "a": "jQuery is a JavaScript Library",
+            "q": "Կայքում նկար տեղադրելու համար ո՞ր տեգն են օգտագործում։",
+            "a": "img",
             "options": [
-                "jQuery is a JSON Library",
-                "jQuery is a JavaScript Library"
+                "img",
+                "span",
+                "div", 
+                "br"
             ]
         }, {
-            "q": "jQuery uses CSS selectors to select elements?",
-            "a": "True",
+            "q": "Ստորև ներկայացված տեգերից որոնք են բլոկային։",
+            "a": "div",
             "options": [
-                "True",
-                "False"
+                "span",
+                "div", 
+                "a", 
+                "img"
             ]
         }, {
-            "q": "Which sign does jQuery use as a shortcut for jQuery?",
-            "a": "the $ sign",
+            "q": "HTML հապավման ճի՞շտ տարբերակն է։",
+            "a": "Hyper Text Markup Language",
             "options": [
-                "the % sign",
-                "the $ sign",
-                "the ? Sign"
+                "Hyper Text Markup Language",
+                "Hyper Text Markup Level",
+                "Hyper Type Markup Language",
+                "High Text Markup Language"
             ]
         }, {
-            "q": "Is jQuery a library for client scripting or server scripting?",
-            "a": "Client scripting",
+            "q": "Ամբողջ կայքի ծրագրային կոդը ո՞ր տեգի մեջ է տեղադրվում։",
+            "a": "html",
             "options": [
-                "Client scripting",
-                "Server scripting",
+                "html",
+                "body",
+                "div",
+                "head"
             ]
         }]
     }

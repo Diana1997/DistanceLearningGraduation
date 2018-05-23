@@ -6,8 +6,6 @@
     <div>
         <img src="~/Images/learn4.jpg" style="    height: 295px;width: 1139px;" />
     </div>
-
-    @*@Html.ActionLink("Ուղարկել ընդունելիության հայտ", "Create", "Statements")*@
     <ul class="list-group" style="    width: 380px;">
         @if (ViewBag.LessonList != null)
         {
@@ -38,7 +36,6 @@
                     <a href="@Url.Action("Read", "Learn", new { path = item.Path })" target="_blank" class="btn btn-success" style="margin-left: 373px;">
                         Կարդալ
                     </a>
-                    @*@Html.ActionLink("Read", "Read", new { path = item.Path }, new { target = "_new" })*@
                 </div>
                 <hr />
             }
@@ -48,6 +45,12 @@
             onclick="location.href='@Url.Action("Show", "Test")'">
         Անցնել թեստը
     </button>
+    <div style="border: solid 1px; margin-left: 900px;margin-top: -413px;  border-color: white;">
+        <h3>Քննությունների օրեր</h3>
+        <span>Ինֆորմատիկա</span>
+        <span>25․05․18  12։00</span>
+    </div>
+
 </div>
 
 <style>
